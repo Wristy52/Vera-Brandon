@@ -1,0 +1,538 @@
+/* ==========================================================
+   ESTILOS GENERALES
+========================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f4fbff;
+    color: #0F3D3E;
+    line-height: 1.6;
+    transition: cursor .2s ease-in-out;
+}
+
+
+
+/* ==========================================================
+   ENCABEZADO
+========================================================== */
+header {
+    background: linear-gradient(to right, #a6e3e9, #cbf1f5);
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 5px solid #71c9ce;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #215f63;
+    text-shadow: 0 0 4px rgba(255,255,255,0.4);
+}
+
+header p {
+    margin-top: 6px;
+    font-size: 1.2rem;
+}
+
+nav ul {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    list-style: none;
+}
+
+nav a {
+    padding: 10px 18px;
+    background: #e3fcff;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #215f63;
+    font-weight: bold;
+    transition: .3s;
+}
+
+nav a:hover {
+    background: #71c9ce;
+    color: white;
+}
+
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+.hero {
+    background: url("https://images.unsplash.com/photo-1523978591478-c753949ff840?auto=format&fit=crop&w=2100&q=80")
+        no-repeat center center / cover;
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    color: white;
+    text-shadow: 0 0 15px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    color: white;
+    margin-top: 12px;
+    font-size: 1.3rem;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.btn {
+    display: inline-block;
+    background: #71c9ce;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: .3s;
+}
+.btn:hover {
+    transform: scale(1.07);
+    background: #5bb7bc;
+}
+
+
+
+/* ==========================================================
+   PRODUCTOS
+========================================================== */
+#productos {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.product-container {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.product-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(145,220,228,0.4);
+    border: 2px solid #d6f4f7;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.7s ease;
+}
+.product-card.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* ==========================================================
+   NOSOTROS
+========================================================== */
+#nosotros {
+    background: #daf7fa;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+
+
+/* ==========================================================
+   SOSTENIBILIDAD
+========================================================== */
+#sostenibilidad {
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #cbf1f5, #e3fcff);
+}
+
+#sostenibilidad ul {
+    list-style: none;
+    max-width: 600px;
+    margin: auto;
+}
+
+#sostenibilidad li {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(145,220,228,0.4);
+}
+
+
+
+/* ==========================================================
+   BLOG
+========================================================== */
+#blog {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.blog-contenedor {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    margin-top: 25px;
+}
+
+.blog-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 0 15px rgba(145,220,228,0.4);
+    border: 2px solid #d6f4f7;
+}
+
+
+
+/* ==========================================================
+   CONTACTO
+========================================================== */
+#contacto {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+form {
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: auto;
+}
+
+input, textarea {
+    border: 2px solid #a6e3e9;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+footer {
+    background: #a6e3e9;
+    padding: 20px;
+    text-align: center;
+    color: #134e4a;
+}
+
+
+
+/* ==========================================================
+   APARICIÓN DE SECCIONES
+========================================================== */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s ease;
+}
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* ==========================================================
+   BOTÓN VOLVER ARRIBA
+========================================================== */
+#btnArriba {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #71c9ce;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    padding: 14px;
+    cursor: pointer;
+    font-size: 18px;
+    display: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+#btnArriba:hover {
+    background: #5bb7bc;
+}
+
+
+
+/* ==========================================================
+   CURSORES ECOGLOW (SVG BASE64)
+========================================================== */
+
+/* 🧼 Cursor Jabón */
+.cursor-jabon {
+    cursor: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjMyIiB3aWR0aD0iMzIiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHg9IjIwIiB5PSIyNSIgd2lkdGg9IjYwIiBoZWlnaHQ9IjUwIiByeD0iMTUiIGZpbGw9IiNmZmYiLz48L3N2Zz4=") 16 16, auto;
+}
+
+/* 🫧 Cursor Burbuja */
+.cursor-burbuja {
+    cursor: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjMyIiB3aWR0aD0iMzIiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyYWRpdXMgcj0iNDQiIGN4PSI1MCIgY3k9IjUwIiBmaWxsPSIjZTJmZmZmIiBvcGFjaXR5PSIwLjgiLz48L3N2Zz4=") 16 16, auto;
+}
+
+/* 💧 Cursor Gota */
+.cursor-gota {
+    cursor: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjMyIiB3aWR0aD0iMzIiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik01MCAxMGMtMTUgMjAtMzAgNTAtMzAgNjAgMCAyMCAxNSAzMCAzMCAzMHMzMC0xMCAzMC0zMC0xNS01MC0zMC02MHoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=") 16 16, auto;
+}
+
+
+
+/* ==========================================================
+   ESTELA DEL CURSOR
+========================================================== */
+.bubble-trail {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: rgba(167, 234, 240, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: bubbleFade .8s linear forwards;
+}
+
+@keyframes bubbleFade {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+/* ==========================================================
+   FAQ (Preguntas Frecuentes)
+=========================================================== */
+
+#faq {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+#faq h2 {
+    font-size: 2.4rem;
+    color: #1a2e3b;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    background: #ffffff;
+    border-radius: 15px;
+    margin: 10px 0;
+    padding: 15px 20px;
+    box-shadow: 0 0 12px rgba(150, 180, 200, 0.3);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.faq-item:hover {
+    transform: scale(1.02);
+}
+
+.faq-pregunta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-pregunta h3 {
+    font-size: 1.2rem;
+    color: #1a2e3b;
+}
+
+.faq-icono {
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: .3s;
+    color: #1a2e3b;
+}
+
+.faq-respuesta {
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+    text-align: left;
+    color: #374b59;
+    border-top: 1px solid #c5d3df;
+    animation: fadeIn .4s ease;
+}
+
+.faq-item.activo .faq-respuesta {
+    display: block;
+}
+
+.faq-item.activo .faq-icono {
+    transform: rotate(45deg);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================
+   REDES SOCIALES
+=========================================================== */
+
+#redes {
+    padding: 60px 20px;
+    text-align: center;
+    background: #d9e6f1;
+}
+
+#redes h2 {
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+    color: #102837;
+}
+
+#redes p {
+    max-width: 650px;
+    margin: auto;
+    margin-bottom: 40px;
+    color: #233a4c;
+}
+
+.redes-container {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.red-social {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 18px;
+    text-decoration: none;
+    color: #1a2e3b;
+    box-shadow: 0 0 12px rgba(100,150,180,0.25);
+    transition: .3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.red-social:hover {
+    transform: scale(1.07);
+    background: #f0f7ff;
+    box-shadow: 0 0 15px rgba(100,180,220,0.35);
+}
+
+.red-social .icon {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+/* ==========================================================
+   LANDING PAGE CON CTA
+=========================================================== */
+
+#landing {
+    padding: 80px 20px;
+    background: linear-gradient(to bottom, #1c2934, #243a4a);
+    color: #fff;
+    text-align: center;
+}
+
+.landing-contenido h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.landing-contenido h1 span {
+    color: #71c9ce;
+}
+
+.landing-sub {
+    font-size: 1.3rem;
+    max-width: 650px;
+    margin: auto;
+    margin-bottom: 30px;
+    color: #d7ecf0;
+}
+
+.cta-btn {
+    background: #71c9ce;
+    padding: 14px 28px;
+    border-radius: 35px;
+    font-size: 1.2rem;
+    color: #0b1b25;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: .3s;
+}
+
+.cta-btn:hover {
+    background: #8fdde4;
+    transform: scale(1.05);
+}
+
+.landing-beneficios {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.beneficio {
+    background: rgba(255,255,255,0.1);
+    padding: 15px 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(4px);
+    color: #e9f8fa;
+    transition: .3s;
+}
+
+.beneficio:hover {
+    transform: scale(1.08);
+    background: rgba(255,255,255,0.2);
+}
+
+.beneficio .icono {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Testimonios */
+.landing-testimonios {
+    margin-top: 60px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.landing-testimonios h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.testimonio {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 12px;
+    color: #e5f8fa;
+    font-style: italic;
+}
+
+.testimonio span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #b4e8ef;
+}
